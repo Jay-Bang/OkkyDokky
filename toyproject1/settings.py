@@ -37,9 +37,9 @@ def get_secret(setting, secrets=secrets):
 SECRET_KEY = get_secret("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = get_secret("ALLOWED_HOSTS")
 
 
 # Application definition
@@ -51,7 +51,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_extensions',
+    # 'django_extensions',
     'okkydokky',
 ]
 
@@ -151,4 +151,4 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-os.environ["DJANGO_ALLOW_ASYNC_UNSAFE"] = "True"
+# os.environ["DJANGO_ALLOW_ASYNC_UNSAFE"] = "True"
