@@ -1,0 +1,212 @@
+{% extends './base.html' %}
+{% block content %}
+
+{% load static %}
+
+<head>
+    <link rel="stylesheet" href="https://uicdn.toast.com/chart/latest/toastui-chart.min.css" />
+    <link rel="stylesheet" href="https://uicdn.toast.com/grid/latest/tui-grid.css" />
+
+    <h1>Home</h1>
+
+
+</head>
+
+<body>
+    <img src="{% static 'images/code_banner.jpeg' %}" , width='100%' , height='auto'>
+    <script src="https://uicdn.toast.com/chart/latest/toastui-chart.min.js"></script>
+    <script src="https://uicdn.toast.com/grid/latest/tui-grid.js"></script>
+
+    <!-- <div class="container"> -->
+    <div class="row">
+        <div class="col">
+            <div id="chart-area 1" style="width: 100%"></div>
+        </div>
+        <div class="col">
+            <div id="chart-area 2" style="width: 100%"></div>
+        </div>
+        <div class="col">
+            <div id="grid" style="width: 100%"></div>
+        </div>
+    </div>
+
+    <!-- </div> -->
+
+    <script type="text/javascript">
+        let years = {{ years| safe }}
+        let no_answers = {{ no_answers| safe }}
+        let unchecked_answers = {{ unchecked_answers| safe }}
+        let checked_answers = {{ checked_answers| safe }}
+        let answer_ratios = {{ answer_ratios| safe }}
+        let checked_answer_ratios = {{ checked_answer_ratios| safe }}
+        let code_languages = {{ code_languages| safe }}
+        let total_useds = {{ total_useds| safe }}
+
+        let el = document.getElementById('chart-area 1');
+        let data = {
+            categories: years,
+            series: {
+                column: [
+                    {
+                        name: '채택 답변이 있는 게시글',
+                        data: checked_answers,
+                    },
+                    {
+                        name: '답변만 있는 게시글',
+                        data: unchecked_answers,
+                    },
+                    {
+                        name: '답변 없는 게시글',
+                        data: no_answers,
+                    },
+                ],
+                line: [
+                    {
+                        name: '평균 답변률',
+                        data: answer_ratios,
+                    },
+                    {
+                        name: '평균 채택 답변률',
+                        data: checked_answer_ratios,
+                    },
+                ],
+            },
+        };
+
+        let theme = {
+            series: {
+                dataLabels: {
+                    fontFamily: 'monaco',
+                    lineWidth: 2,
+                    textStrokeColor: '#ffffff',
+                    shadowColor: '#ffffff',
+                    shadowBlur: 4,
+                    stackTotal: {
+                        fontFamily: 'monaco',
+                        fontWeight: 14,
+                        color: '#ffffff',
+                        textBubble: {
+                            visible: true,
+                            paddingY: 6,
+                            borderWidth: 3,
+                            borderColor: '#00bcd4',
+                            borderRadius: 7,
+                            backgroundColor: '#041367',
+                            shadowOffsetX: 0,
+                            shadowOffsetY: 0,
+                            shadowBlur: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0)',
+                        },
+                    },
+                },
+            },
+        };
+
+        let options = {
+            chart: { title: 'OkkyDokky Data Status', width: 'auto', height: 400 },
+            series: {
+                stack: { type: 'normal' },
+                selectable: true,
+                dataLabels: {
+                    visible: false,
+                },
+            },
+            theme,
+            yAxis: { title: 'Quantity of Data' },
+            xAxis: { title: 'Year' },
+            legend: { align: 'bottom' },
+        };
+
+        let chart1 = toastui.Chart.columnLineChart({ el, data, options });
+
+
+
+
+
+        //////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+        el = document.getElementById('chart-area 2');
+        data = {
+            categories: code_languages,
+            series: [
+                {
+                    name: 'Data',
+                    data: total_useds,
+                },
+            ],
+        };
+
+        options = {
+            chart: { title: 'OkkyDokky Code Block Used', width: 'auto', height: 400 },
+            series: {
+                stack: { type: 'normal' },
+                selectable: true,
+                dataLabels: {
+                    visible: false,
+                },
+            },
+            theme,
+            yAxis: { title: 'Usage' },
+            xAxis: { title: 'Type of Language' },
+            legend: { visible: false },
+        };
+
+        chart2 = toastui.Chart.columnChart({ el, data, options });
+
+
+
+
+
+        //////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+        const gridData = [
+            {
+                no: '1',
+                title: '7월 1번째 업데이트',
+                count: '200',
+                date: '2022.7.11',
+            },
+        ];
+
+        let grid = new tui.Grid({
+            el: document.getElementById('grid'),
+            data: gridData,
+            scrollX: false,
+            scrollY: false,
+            rowHeaders: ['checkbox'],
+            columns: [
+                {
+                    header: 'No.',
+                    name: 'no'
+                },
+                {
+                    header: 'Title',
+                    name: 'title'
+                },
+                {
+                    header: 'Count',
+                    name: 'count'
+                },
+                {
+                    header: 'Date',
+                    name: 'date'
+                },
+            ]
+        });
+
+    </script>
+
+
+    </div>
+
+</body>
+
+{% endblock %}}

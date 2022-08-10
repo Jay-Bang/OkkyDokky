@@ -1,0 +1,28 @@
+{% extends './base.html' %}
+
+{% block content %}
+<h1>Log In</h1>
+
+{% if user.is_authenticated %}
+<div>
+    {{user}}
+</div>
+
+{% else %}
+<div>
+    <form method="POST" action="../login/">
+        {%csrf_token%}
+        ID : <input name='username' type='text' autocomplete="current-password"/><br>
+        Password : <input name='password' type='password' autocomplete="current-password" /><br>
+        <input type='submit' value='Log In'>
+    </form>
+</div>
+<div>
+    <a href="../signup">
+        <button>Sign Up</button>
+    </a>
+</div>
+
+{% endif %}
+
+{% endblock %}}

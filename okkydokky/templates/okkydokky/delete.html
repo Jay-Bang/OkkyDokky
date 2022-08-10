@@ -1,0 +1,21 @@
+{% extends './base.html' %}
+
+{% block content %}
+<h1>Delete</h1>
+
+{% if user.is_authenticated %}
+<div>
+    <div>
+        <form method="POST" action="../delete/">
+            {%csrf_token%}
+            ID : <input name='username' type='text' /><br>
+            Password : <input name='password' type='text' /><br>
+            <input type='submit' value='Delete'>
+        </form>
+    </div>
+</div>
+
+
+{% endif %}
+
+{% endblock %}}

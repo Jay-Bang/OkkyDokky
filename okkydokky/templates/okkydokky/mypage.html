@@ -1,0 +1,128 @@
+{% extends './base.html' %}
+{% block content %}
+
+{% load static %}
+<script src="https://uicdn.toast.com/chart/latest/toastui-chart.min.js"></script>
+
+<script src="/static/js/ajax/ajaxMyPage.js"></script>
+<script src="/static/js/ajax/ajaxMyPageCommon.js"></script>
+<script src="/static/js/ajax/ajaxDeleteMsg.js"></script>
+
+<script src="/static/js/display/displayScrapedTable.js"></script>
+<script src="/static/js/display/displayPageNum.js"></script>
+<script src="/static/js/display/displayChart.js"></script>
+
+<script src="/static/js/search/searchKeyword.js"></script>
+<script src="/static/js/search/searchTag.js"></script>
+
+<script src="/static/js/event/eventDataPerPage.js"></script>
+<script src="/static/js/event/eventOpenClose.js"></script>
+<script src="/static/js/event/eventDelete.js"></script>
+
+<script src="/static/js/pagination/pagiNation.js"></script>
+
+<style>
+    td {
+        border: 2px solid #444444;
+    }
+</style>
+
+<head>
+    <h1>My Page</h1>
+</head>
+
+<!-- <div id="container"> -->
+
+<div style="text-align:right">
+    <select id="dataPerPage">
+        <option value="20" selected>10개씩 보기</option>
+        <option value="20">20개씩 보기</option>
+        <option value="50">50개씩 보기</option>
+        <option value="100">100개씩 보기</option>
+    </select>
+</div>
+
+<div class="board">
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th style="text-align:center">ID</th>
+                <th style="text-align:center">Title</th>
+                <th style="text-align:center">Link</th>
+                <th style="text-align:center">Total Comment</th>
+                <th style="text-align:center">Post Date</th>
+                <th style="text-align:center">View</th>
+                <th style="text-align:center">Scrap</th>
+            </tr>
+        </thead>
+        <tbody id="content_table">
+        </tbody>
+    </table>
+</div>
+
+<div style="text-align:center">
+    <input id="searchKeyword" />
+    <button id="searchBtn">search</button>
+    <select id="conditionVal">
+        <option value="and" selected>AND</option>
+        <option value="or">OR</option>
+    </select>
+</div>
+
+<br>
+
+<div id="pagination" style="text-align:center">
+</div>
+
+<div class="row">
+    <div class="col">
+        <div id="chart-area 1" style="width: 100%"></div>
+    </div>
+    <div class="col">
+        <div id="chart-area 2" style="width: 100%"></div>
+    </div>
+    <div class="col">
+        <div id="chart-area 3" style="width: 100%"></div>
+    </div>
+</div>
+
+<!-- </div> -->
+
+<script type="text/javascript">
+    let params = {
+        'limit': 10,
+        'page': 1,
+        'totalData': '',
+        'totalPage': '',
+        'startRange': '',
+        'endRange': '',
+        'prevEndRange': '',
+        'nextStartRange': '',
+        'searchKeyword': '',
+        'conditionVal': 'and',
+        'check': 'check',
+        'url': "../../../okkydokky/mypage/" + 1 + "/",
+        'noAnswer': "",
+        'checkedAnswer': "",
+        'unCheckedAnswer': ""
+    }
+    $(document).ready(function () {
+        if (params['totalData'] == '') {
+            ajaxMyPage(params)
+        }
+
+        // 이벤트
+        eventDataPerPage(params)
+        eventOpenClose()
+        eventDelete()
+
+        // 검색
+        searchKeyword(params)
+        searchTag(params)
+
+        // 페이지네이션
+        pagiNation(params)
+    })
+</script>
+
+{% endblock %}}
