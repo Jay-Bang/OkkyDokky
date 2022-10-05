@@ -127,3 +127,26 @@
 # 개선 필요 사항
 
 1. okky 사이트 개편으로 인하여 v2.0에 맞는 데이터 수집 코드를 수정 중입니다.
+
+# 구현한 사이트
+
+1. 메인 페이지
+
+![Screenshot 2022-10-05 at 19 18 30](https://user-images.githubusercontent.com/102448185/194038944-b5725a4b-c14c-4600-a1ef-b6393cb97e44.jpg)
+
+2. 게시판 페이지
+
+![Screenshot 2022-10-05 at 19 16 38](https://user-images.githubusercontent.com/102448185/194038997-5b8c8590-b2b2-4227-9b4d-c3ab6c4426b5.jpg)
+
+3. 마이 페이지
+
+![Screenshot 2022-10-05 at 19 17 09](https://user-images.githubusercontent.com/102448185/194039028-62b2aa9c-5a87-46a6-9f9c-511b9eed4b60.jpg)
+
+4. 검색, N개씩 보기, 태그 정렬
+
+![Screenshot 2022-10-05 at 19 22 05](https://user-images.githubusercontent.com/102448185/194039110-a859886a-a4e3-4e25-8233-9a1b3f43ba7c.jpg)
+
+![Screenshot 2022-10-05 at 19 21 16](https://user-images.githubusercontent.com/102448185/194039129-2f6d21bf-1dd2-4d90-a27b-f610d25dbc6b.jpg)
+
+![Screenshot 2022-10-05 at 19 21 42](https://user-images.githubusercontent.com/102448185/194039193-b5991da5-027e-4e1f-b1c3-9adb806bea29.jpg)
+
