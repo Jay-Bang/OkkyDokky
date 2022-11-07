@@ -64,8 +64,6 @@
     
     게시글의 내용에 이미지, 코드, 또는 이미지와 코드가 모두 사용되었는지, OkkyDokky 게시판 내 게시글 제목 옆에 미리 보기를 지원합니다.
     
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5e853986-6784-41bb-aff2-b0a7339cd06b/Untitled.png)
-    
 5. **검색식 선택(AND 또는 OR):**
     
     AND와 OR 조건의 검색식을 적용하였습니다. (선택 가능)
