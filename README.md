@@ -65,19 +65,14 @@ graph TD;
 
 ## 7. 실행 결과 (Screenshots)
 
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/102448185/194038944-b5725a4b-c14c-4600-a1ef-b6393cb97e44.jpg" alt="메인 페이지" width="400"/>
-  <br><em>메인 페이지</em>
-</p>
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/102448185/194038997-5b8c8590-b2b2-4227-9b4d-c3ab6c4426b5.jpg" alt="게시판 페이지" width="400"/>
-  <br><em>게시판 페이지</em>
-</p>
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/102448185/194039028-62b2aa9c-5a87-46a6-9f9c-511b9eed4b60.jpg" alt="마이 페이지" width="400"/>
-  <br><em>마이 페이지 (대시보드)</em>
-</p>
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/102448185/194039110-a859886a-a4e3-4e25-8233-9a1b3f43ba7c.jpg" alt="검색 기능" width="400"/>
-  <br><em>검색, N개씩 보기, 태그 정렬 기능</em>
-</p>
+![메인 페이지](https://user-images.githubusercontent.com/102448185/194038944-b5725a4b-c14c-4600-a1ef-b6393cb97e44.jpg)
+*메인 페이지*
+
+![게시판 페이지](https://user-images.githubusercontent.com/102448185/194038997-5b8c8590-b2b2-4227-9b4d-c3ab6c4426b5.jpg)
+*게시판 페이지*
+
+![마이 페이지 (대시보드)](https://user-images.githubusercontent.com/102448185/194039028-62b2aa9c-5a87-46a6-9f9c-511b9eed4b60.jpg)
+*마이 페이지 (대시보드)*
+
+![검색, N개씩 보기, 태그 정렬 기능](https://user-images.githubusercontent.com/102448185/194039110-a859886a-a4e3-4e25-8233-9a1b3f43ba7c.jpg)
+*검색, N개씩 보기, 태그 정렬 기능*
